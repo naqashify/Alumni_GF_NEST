@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gandhi Fellowship Alumni Dashboard 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <h1 class="dashboard-title">
+                        <span class="logo-icon">⚡</span>
+                        Gandhi Fellowship Alumni
+                        <span class="year-badge">2025</span>
+                    </h1>
+                </div>
+                <div class="header-controls">
+                    <div class="search-container">
+                        <input type="search" id="searchInput" placeholder="Search alumni..." class="form-control search-input">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <button class="btn btn--primary export-btn" id="exportBtn">
+                        <span class="btn-icon">📊</span>
+                        Export Data
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Horizontal Navigation Tabs -->
+        <nav class="tab-navigation">
+            <div class="tab-container">
+                <button class="tab-item active" data-section="overview">
+                    <span class="tab-icon">📊</span>
+                    <span class="tab-label">Overview</span>
+                    <span class="tab-indicator"></span>
+                </button>
+                <button class="tab-item" data-section="demographics">
+                    <span class="tab-icon">👥</span>
+                    <span class="tab-label">Demographics</span>
+                    <span class="tab-indicator"></span>
+                </button>
+                <button class="tab-item" data-section="engagement">
+                    <span class="tab-icon">🤝</span>
+                    <span class="tab-label">Engagement</span>
+                    <span class="tab-indicator"></span>
+                </button>
+                <button class="tab-item" data-section="geographic">
+                    <span class="tab-icon">🗺️</span>
+                    <span class="tab-label">Geographic</span>
+                    <span class="tab-indicator"></span>
+                </button>
+                <button class="tab-item" data-section="academic">
+                    <span class="tab-icon">🎓</span>
+                    <span class="tab-label">Academic</span>
+                    <span class="tab-indicator"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Overview Section -->
+            <section id="overview" class="content-section active">
+                <div class="section-header">
+                    <h2 class="section-title">Program Overview</h2>
+                    <p class="section-description">Comprehensive insights into the Gandhi Fellowship alumni network and their impact across India.</p>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card primary">
+                        <div class="metric-icon">👥</div>
+                        <div class="metric-content">
+                            <div class="metric-value">2,235</div>
+                            <div class="metric-label">Total Alumni</div>
+                        </div>
+                    </div>
+                    <div class="metric-card secondary">
+                        <div class="metric-icon">🎯</div>
+                        <div class="metric-content">
+                            <div class="metric-value">15</div>
+                            <div class="metric-label">Unique Batches</div>
+                        </div>
+                    </div>
+                    <div class="metric-card tertiary">
+                        <div class="metric-icon">🌍</div>
+                        <div class="metric-content">
+                            <div class="metric-value">42</div>
+                            <div class="metric-label">States Represented</div>
+                        </div>
+                    </div>
+                    <div class="metric-card quaternary">
+                        <div class="metric-icon">🏢</div>
+                        <div class="metric-content">
+                            <div class="metric-value">1,074</div>
+                            <div class="metric-label">Organizations</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="engagement-overview">
+                    <h3 class="section-subtitle">Alumni Engagement</h3>
+                    <div class="engagement-grid">
+                        <div class="engagement-card">
+                            <div class="engagement-stat">
+                                <span class="stat-number">713</span>
+                                <span class="stat-label">Alumni with LinkedIn</span>
+                            </div>
+                            <div class="engagement-progress">
+                                <div class="progress-bar" data-progress="32"></div>
+                            </div>
+                        </div>
+                        <div class="engagement-card">
+                            <div class="engagement-stat">
+                                <span class="stat-number">77.9%</span>
+                                <span class="stat-label">Willing to Mentor</span>
+                            </div>
+                            <div class="engagement-progress">
+                                <div class="progress-bar" data-progress="78"></div>
+                            </div>
+                        </div>
+                        <div class="engagement-card">
+                            <div class="engagement-stat">
+                                <span class="stat-number">79.9%</span>
+                                <span class="stat-label">Placement Support</span>
+                            </div>
+                            <div class="engagement-progress">
+                                <div class="progress-bar" data-progress="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="program-summary">
+                    <div class="summary-content">
+                        <h3 class="summary-title">About Gandhi Fellowship</h3>
+                        <p class="summary-text">The Gandhi Fellowship is a flagship program that develops young leaders to work in the education sector. Alumni from 15 batches have spread across 42 states, working in 1,074+ organizations and showing remarkable commitment to mentoring future batches and supporting placement activities.</p>
+                    </div>
+                    <div class="summary-stats">
+                        <div class="quick-stat">
+                            <span class="quick-number">1,742</span>
+                            <span class="quick-label">Mentors</span>
+                        </div>
+                        <div class="quick-stat">
+                            <span class="quick-number">1,786</span>
+                            <span class="quick-label">Placement Support</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Demographics Section -->
+            <section id="demographics" class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Demographics Analysis</h2>
+                    <div class="filter-controls">
+                        <select id="batchFilter" class="form-control filter-select">
+                            <option value="">All Batches</option>
+                        </select>
+                        <select id="workStatusFilter" class="form-control filter-select">
+                            <option value="">All Work Status</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-container modern">
+                        <div class="chart-header">
+                            <h3>Batch Distribution</h3>
+                            <div class="chart-actions">
+                                <button class="chart-btn">📈</button>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper" style="position: relative; height: 300px;">
+                            <canvas id="batchChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container modern">
+                        <div class="chart-header">
+                            <h3>Work Status Distribution</h3>
+                            <div class="chart-actions">
+                                <button class="chart-btn">📊</button>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper" style="position: relative; height: 300px;">
+                            <canvas id="workStatusChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container modern full-width">
+                    <div class="chart-header">
+                        <h3>Big Bet Programs Distribution</h3>
+                        <div class="chart-actions">
+                            <button class="chart-btn">📋</button>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper" style="position: relative; height: 400px;">
+                        <canvas id="bigBetChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Engagement Section -->
+            <section id="engagement" class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Alumni Engagement</h2>
+                </div>
+
+                <div class="engagement-analysis">
+                    <div class="chart-container modern">
+                        <div class="chart-header">
+                            <h3>Mentoring Willingness</h3>
+                            <div class="chart-actions">
+                                <button class="chart-btn">🎯</button>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper" style="position: relative; height: 300px;">
+                            <canvas id="mentoringChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container modern">
+                        <div class="chart-header">
+                            <h3>Placement Support</h3>
+                            <div class="chart-actions">
+                                <button class="chart-btn">💼</button>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper" style="position: relative; height: 300px;">
+                            <canvas id="placementChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="engagement-insights">
+                    <div class="insight-card">
+                        <div class="insight-icon">🚀</div>
+                        <div class="insight-content">
+                            <h4>High Engagement</h4>
+                            <p>77.9% of alumni are willing to mentor future batches</p>
+                        </div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-icon">💡</div>
+                        <div class="insight-content">
+                            <h4>Support Network</h4>
+                            <p>79.9% offer placement support to fellow alumni</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Geographic Section -->
+            <section id="geographic" class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Geographic Distribution</h2>
+                </div>
+
+                <div class="geographic-analysis">
+                    <div class="chart-container modern">
+                        <div class="chart-header">
+                            <h3>Top States by Alumni Count</h3>
+                            <div class="chart-actions">
+                                <button class="chart-btn">🗺️</button>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper" style="position: relative; height: 400px;">
+                            <canvas id="statesChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="states-ranking modern">
+                        <div class="ranking-header">
+                            <h3>Top 10 States</h3>
+                            <div class="ranking-actions">
+                                <button class="chart-btn">📊</button>
+                            </div>
+                        </div>
+                        <div class="ranking-list" id="statesRanking"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Academic Section -->
+            <section id="academic" class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Academic Background</h2>
+                </div>
+
+                <div class="academic-analysis">
+                    <div class="chart-container modern">
+                        <div class="chart-header">
+                            <h3>Top Undergraduate Colleges</h3>
+                            <div class="chart-actions">
+                                <button class="chart-btn">🎓</button>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper" style="position: relative; height: 400px;">
+                            <canvas id="ugChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container modern">
+                        <div class="chart-header">
+                            <h3>Top Postgraduate Universities</h3>
+                            <div class="chart-actions">
+                                <button class="chart-btn">📚</button>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper" style="position: relative; height: 400px;">
+                            <canvas id="pgChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="top-organizations modern">
+                    <div class="org-header">
+                        <h3>Top Organizations</h3>
+                        <div class="org-actions">
+                            <button class="chart-btn">🏢</button>
+                        </div>
+                    </div>
+                    <div class="org-list" id="organizationsList"></div>
+                </div>
+            </section>
+
+            <!-- Data Table Section -->
+            <div class="data-table-section modern">
+                <div class="table-controls">
+                    <h3 class="table-title">Alumni Data</h3>
+                    <div class="table-filters">
+                        <div class="search-container">
+                            <input type="search" id="tableSearch" placeholder="Search table..." class="form-control">
+                            <span class="search-icon">🔍</span>
+                        </div>
+                        <select id="rowsPerPage" class="form-control">
+                            <option value="10">10 rows</option>
+                            <option value="25">25 rows</option>
+                            <option value="50">50 rows</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table id="alumniTable" class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Batch</th>
+                                <th>State</th>
+                                <th>Work Status</th>
+                                <th>Big Bet</th>
+                                <th>Mentoring</th>
+                                <th>Placement Support</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
